@@ -30,3 +30,17 @@ function findTopAndBottomPerformers(salesData) {
         return result;
     }, { topPerformer: null, bottomPerformer: null });
 }
+
+
+// Function to generate a performance report for multiple salespeople
+function generatePerformanceReport(salesData) {
+    const report = salesData.map(salesperson => {
+        const averageSales = calculateAverageSales(salesperson.sales); // Calculate average
+        const performanceRating = determinePerformanceRating(averageSales); // Determine rating
+        return {
+            name: salesperson.name,
+            averageSales: averageSales,
+            performanceRating: performanceRating,
+            totalSales: salesperson.sales.reduce((acc, curr) => acc + curr, 0) // Calculate total sales
+        };
+    });
