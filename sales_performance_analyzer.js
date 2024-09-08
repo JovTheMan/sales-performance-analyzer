@@ -18,3 +18,15 @@ function determinePerformanceRating(averageSales) {
     }
 }
 
+// Function to identify the top and bottom performers based on total sales
+function findTopAndBottomPerformers(salesData) {
+    return salesData.reduce((result, salesperson) => {
+        if (!result.topPerformer || salesperson.totalSales > result.topPerformer.totalSales) {
+            result.topPerformer = salesperson; // Update top performer
+        }
+        if (!result.bottomPerformer || salesperson.totalSales < result.bottomPerformer.totalSales) {
+            result.bottomPerformer = salesperson; // Update bottom performer
+        }
+        return result;
+    }, { topPerformer: null, bottomPerformer: null });
+}
