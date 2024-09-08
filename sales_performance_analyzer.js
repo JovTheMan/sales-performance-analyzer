@@ -44,3 +44,13 @@ function generatePerformanceReport(salesData) {
             totalSales: salesperson.sales.reduce((acc, curr) => acc + curr, 0) // Calculate total sales
         };
     });
+
+        // Find the top and bottom performers
+    const topAndBottomPerformers = findTopAndBottomPerformers(report);
+
+    return {
+        report: report,
+        topPerformer: topAndBottomPerformers.topPerformer,
+        bottomPerformer: topAndBottomPerformers.bottomPerformer
+    };
+}
