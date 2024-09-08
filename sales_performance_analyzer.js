@@ -54,3 +54,16 @@ function generatePerformanceReport(salesData) {
         bottomPerformer: topAndBottomPerformers.bottomPerformer
     };
 }
+
+
+// Sample data for testing the functions
+const salesData = [
+    { name: 'Alice', sales: [12000, 15000, 13000] },
+    { name: 'Bob', sales: [7000, 6000, 7500] },
+    { name: 'Charlie', sales: [3000, 4000, 3500] },
+    { name: 'Diana', sales: [9000, 8500, 9200] }
+];
+
+// Generate and log the performance report
+const performanceReport = generatePerformanceReport(salesData);
+console.log(performanceReport);
